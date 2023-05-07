@@ -4,11 +4,43 @@
 
 <head>
 	<link rel="stylesheet" href="styles.css">
+		
 </head>
 
 <body>
+	<button onclick="myFunction">Click me!</button>
 	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
+    <script >
+		function myFunction(){
+			let input=prompt("Enter a string","aabbcdd");
+			function firstNonRepeatedCharacter(str) {
+  // Create an empty object to store the character frequencies
+				const charFreq = {};
+
+  // Loop through the string to count the frequency of each character
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    charFreq[char] = charFreq[char] ? charFreq[char] + 1 : 1;
+  }
+
+  // Loop through the string again to find the first non-repeated character
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if (charFreq[char] === 1) {
+      return char;
+    }
+  }
+
+  // If no non-repeated characters were found, return null
+  return null;
+}
+const result = firstNonRepeatedCharacter(input);
+if (result) {
+  alert( "${result}");
+	
+	}
+			
+		}
 </script>
 
 </body>
